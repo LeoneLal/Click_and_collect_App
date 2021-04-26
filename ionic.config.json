@@ -1,7 +1,0 @@
-{
-  "name": "clickAndCollectApp",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
