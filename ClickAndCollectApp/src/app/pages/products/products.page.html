@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product"  *ngFor="let product of productTab" [routerLink]="['/', 'products', product.id]">
+    <div class="img_box">
+      <img src="http://127.0.0.1:8000/images/products/{{ product.picture_slug }}">
+    </div>
+    <div class="infos">
+      <h1 class="productTitle">{{ product.name }}</h1>
+      <p class="productPrice">{{ product.price }} €</p>
+      <p>{{ product.category_id }}</p>
+    </div>
+    <button class="cartButton">
+      <ion-icon name="cart"></ion-icon>Ajouter
+    </button>
+  </div>
+</ion-content>

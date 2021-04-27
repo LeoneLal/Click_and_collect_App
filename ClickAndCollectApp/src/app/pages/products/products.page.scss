@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.product {
+  display: flex;
+  .img_box img {
+    max-width: 80px;
+    height: auto;
+  }
+
+  .productTitle {
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .productPrice {
+    color: #8c1c13;
+    font-size: 10px;
+  }
+
+  .cartButton {
+    background-color: #bf4342;
+    color: white;
+    border-radius: 5px;
+    height: fit-content;
+    width: max-content;
+  }
+}
