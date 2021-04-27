@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NavigationExtras, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,7 +10,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductsPage implements OnInit {
 
   productTab: any = [];
-  categories: any = []
+  categories: any = [];
+  currentQuantity: number = 1;
 
   constructor(private http: HttpClient, private productService: ProductService) {  }
   ngOnInit() {
@@ -25,14 +25,24 @@ export class ProductsPage implements OnInit {
 
       this.productTab.forEach(product => {
         let categ = product.category_id;
+        product.currentquantity = 1
         this.categories.forEach(category => {
           if( categ === category.id) {
-            product.category_id = category.name
+            product.category = category.name
           }
         });
       });
     });
   }
 
+  decrement(i) {
+    if (i.currentquantity > 0) {
+      i.currentquantity--;
+    }
+  }
+  
+  increment(i) {
+    i.currentquantity++;
+  }
 
 }
