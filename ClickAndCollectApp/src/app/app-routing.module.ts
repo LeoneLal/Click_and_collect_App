@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
+  // },
+  // {
+  //   path: `products/:id`,
+  //   loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+  // },
   {
     path: '',
-    loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
-  },
-  {
-    path: `products/:id`,
-    loadChildren: () => import('./pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
 ];
 @NgModule({
