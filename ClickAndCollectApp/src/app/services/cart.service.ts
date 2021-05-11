@@ -31,14 +31,13 @@ export class CartService {
     return this.cartItemCount;
   }
   
-  // Increment 
+  // Increment quantity
   addProduct(product) {
     let added = false;
     for (let p of this.cart) {
       if (p.id === product.id) {
         p.productQuantity += product.currentQuantity;
         added = true;
-        console.log(p.currentQuantity);
         break;
       }
     }
@@ -49,6 +48,7 @@ export class CartService {
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
  
+  // Decrement quantity
   decreaseProduct(product) {
     for (let [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
@@ -61,6 +61,7 @@ export class CartService {
     this.cartItemCount.next(this.cartItemCount.value - 1);
   }
  
+  // Remove from cart
   removeProduct(product) {
     for (let [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
