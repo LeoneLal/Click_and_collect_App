@@ -19,11 +19,10 @@ export class ProductDetailsPage implements OnInit {
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
- 
+
     // Get product categories from the API
-    this.productService.getCategories().subscribe(result =>{
+    this.productService.getCategories().subscribe(result => {
       this.categories = result
-      console.log(this.categories)
     });
 
     // Get the information from the API
@@ -31,10 +30,10 @@ export class ProductDetailsPage implements OnInit {
       this.information = result;
 
       this.categories.forEach(category => {
-        if(this.information.category_id == category.id) {
+        if (this.information.category_id == category.id) {
           this.information.category_id = category.name
         }
       });
-    });    
+    });
   }
 }
