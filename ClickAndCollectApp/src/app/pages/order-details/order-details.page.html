@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="orderDetails">
+    <ion-card class="product" *ngFor="let line of orderDetails">
+      <div class="img_box">
+        <img src="http://127.0.0.1:8000/images/products/{{ line.picture_slug }}">
+      </div>
+      <div class="infos">
+        <h1 class="productTitle">{{ line.name }}</h1>
+        <p class="productInfo">{{ line.price }} €</p>
+        <p class="productInfo">Quantité : {{ line.quantity }}</p>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
