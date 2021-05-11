@@ -1,0 +1,9 @@
+.li-ionic4-datePicker {
+    .modal-wrapper {
+        height: 470px;
+        max-height: 100%;
+        width: 312px;
+        --ion-color-primary: red; // This Variable used for the change of colour ion-datepicker only.
+        --ion-color-primary-tint: rgb(214, 153, 153); // This Variable changes the tint colour of background when click button.
+    }
+  }
