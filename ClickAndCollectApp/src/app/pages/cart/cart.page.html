@@ -25,7 +25,7 @@
             </ion-col>
 
             <ion-col size="1" class="ion-align-self-center">
-              {{ p.currentQuantity }}
+              {{ p.productQuantity }}
             </ion-col>
 
             <ion-col size="2" class="ion-align-self-center">
@@ -64,9 +64,15 @@
       </ion-item>
     </ion-list>
 
-    <ion-button expand="full">
+    <ion-button expand="full" (click)="openDatePicker()" >
       Pick a date
     </ion-button>
+
+    <ion-input readonly [(ngModel)]="selectedDate" 
+    [liIonic4Datepicker]="datePickerObj">
+    </ion-input>
+
+    <ion-datetime placeholder="Select Hour" displayFormat="HH:mm" min="09:00" max="21:00" ></ion-datetime>
 
     <ion-button expand="full" (click)="checkout()">
       Checkout

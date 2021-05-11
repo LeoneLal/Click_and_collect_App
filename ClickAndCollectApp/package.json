@@ -23,6 +23,8 @@
     "@ionic/angular": "^5.5.2",
     "@ionic/pwa-elements": "^3.0.2",
     "@ionic/storage": "^3.0.4",
+    "@logisticinfotech/ionic4-datepicker": "^1.4.4",
+    "moment": "^2.29.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
