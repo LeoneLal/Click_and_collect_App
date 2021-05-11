@@ -59,6 +59,7 @@ export class ProductsPage implements OnInit {
   addToCart(product) {
     this.cartService.addProduct(product);
     console.log(product);
+    product.currentQuantity = 1;
   }
 
 }
