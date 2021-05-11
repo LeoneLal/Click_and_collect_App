@@ -25,8 +25,7 @@ export class ProductsPage implements OnInit {
   constructor(private http: HttpClient, private productService: ProductService, private cartService: CartService, private modalCtrl: ModalController) {  }
   ngOnInit() {
     this.productService.getCategories().subscribe(result => {
-      this.categories = result
-      console.log(this.categories)
+      this.categories = result;
       this.products = this.cartService.getProducts();
       this.cart = this.cartService.getCart();
       this.cartItemCount = this.cartService.getCartItemCount();
@@ -58,7 +57,6 @@ export class ProductsPage implements OnInit {
 
   addToCart(product) {
     this.cartService.addProduct(product);
-    console.log(product);
     product.currentQuantity = 1;
   }
 
