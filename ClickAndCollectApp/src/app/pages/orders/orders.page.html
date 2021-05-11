@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="order" *ngFor="let order of ordersTab">
+    <div class="infos">
+      <h1>Commande n° {{ order.id }}</h1>
+      <p class="productTitle">{{ order.total_price }} €</p>
+      <p class="productCategory">A récupérer le {{ order.pickup_date }}</p>
+      <p class="productPrice">{{ order.order_status }} </p>
+    </div>
+    <button class="cartButton" [routerLink]="['/tabs/', 'order', order.id]">
+      <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+    </button>
+  </div>
 </ion-content>
