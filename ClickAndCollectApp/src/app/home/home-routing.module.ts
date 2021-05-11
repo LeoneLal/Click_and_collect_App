@@ -13,7 +13,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/products/products.module').then( m => m.ProductsPageModule)
+            loadChildren: () => import('../pages/products/products.module').then(m => m.ProductsPageModule)
           }
         ]
       },
@@ -22,7 +22,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+            loadChildren: () => import('../pages/product-details/product-details.module').then(m => m.ProductDetailsPageModule)
           }
         ]
       },
@@ -31,7 +31,16 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/orders/orders.module').then( m => m.OrdersPageModule)
+            loadChildren: () => import('../pages/orders/orders.module').then(m => m.OrdersPageModule)
+          }
+        ]
+      },
+      {
+        path: `order/:id`,
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/order-details/order-details.module').then(m => m.OrderDetailsPageModule)
           }
         ]
       },
@@ -40,7 +49,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/cart/cart.module').then( m => m.CartPageModule)
+            loadChildren: () => import('../pages/cart/cart.module').then(m => m.CartPageModule)
           }
         ]
       },
@@ -49,7 +58,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../pages/account/account.module').then( m => m.AccountPageModule)
+            loadChildren: () => import('../pages/account/account.module').then(m => m.AccountPageModule)
           }
         ]
       },
@@ -71,4 +80,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class HomePageRoutingModule {}
+export class HomePageRoutingModule { }
