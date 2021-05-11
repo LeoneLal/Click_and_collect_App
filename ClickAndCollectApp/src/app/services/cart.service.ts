@@ -6,6 +6,7 @@ export interface Product {
   name: string;
   price: number;
   currentQuantity: number;
+  productQuantity: number;
 }
 @Injectable({
   providedIn: 'root'
@@ -35,13 +36,14 @@ export class CartService {
     let added = false;
     for (let p of this.cart) {
       if (p.id === product.id) {
-        p.currentQuantity += 1;
+        p.productQuantity += product.currentQuantity;
         added = true;
         console.log(p.currentQuantity);
         break;
       }
     }
     if (!added) {
+      product.productQuantity = product.currentQuantity;
       this.cart.push(product);
     }
     this.cartItemCount.next(this.cartItemCount.value + 1);
@@ -50,8 +52,8 @@ export class CartService {
   decreaseProduct(product) {
     for (let [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
-        p.currentQuantity -= 1;
-        if (p.currentQuantity == 0) {
+        p.productQuantity -= 1;
+        if (p.productQuantity == 0) {
           this.cart.splice(index, 1);
         }
       }
@@ -62,7 +64,7 @@ export class CartService {
   removeProduct(product) {
     for (let [index, p] of this.cart.entries()) {
       if (p.id === product.id) {
-        this.cartItemCount.next(this.cartItemCount.value - p.currentQuantity);
+        this.cartItemCount.next(this.cartItemCount.value - p.productQuantity);
         this.cart.splice(index, 1);
       }
     }

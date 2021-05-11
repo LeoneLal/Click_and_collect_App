@@ -30,7 +30,7 @@ export class CartPage implements OnInit {
   }
  
   getTotal() {
-    return this.cart.reduce((i, j) => i + j.price * j.currentQuantity, 0);
+    return this.cart.reduce((i, j) => i + j.price * j.productQuantity, 0);
   }
  
   close() {
