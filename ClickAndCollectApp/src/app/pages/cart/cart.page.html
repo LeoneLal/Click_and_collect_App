@@ -64,10 +64,14 @@
       </ion-item>
     </ion-list>
 
-    <ion-button expand="full" >
+    <ion-button expand="full" (click)="openDatePicker()" >
       Pick a date
     </ion-button>
- 
+
+    <ion-input readonly [(ngModel)]="selectedDate" 
+    [liIonic4Datepicker]="datePickerObj">
+    </ion-input>
+
     <ion-button expand="full" (click)="checkout()">
       Checkout
     </ion-button>
