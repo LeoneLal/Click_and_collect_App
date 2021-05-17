@@ -17,4 +17,10 @@ export class OrdersService {
   getOrderDetails(id) {
     return this.http.get(`${this.url}orderlines/${id}`);
   }
+
+  postOrder(form) {
+    console.log(form)
+    return this.http.post(`${this.url}orders/store/`, form);
+  }
+
 }
