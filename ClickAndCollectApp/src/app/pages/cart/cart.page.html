@@ -64,15 +64,15 @@
       </ion-item>
     </ion-list>
 
-    <ion-button expand="full" (click)="openDatePicker()" >
+    <ion-button expand="full" (click)="openDatePicker()">
       Pick a date
     </ion-button>
 
-    <ion-input readonly [(ngModel)]="selectedDate" 
-    [liIonic4Datepicker]="datePickerObj">
+    <ion-input readonly [(ngModel)]="selectedDate" [liIonic4Datepicker]="datePickerObj">
     </ion-input>
 
-    <ion-datetime placeholder="Select Hour" displayFormat="HH:mm" min="09:00" max="21:00" ></ion-datetime>
+    <ion-datetime placeholder="Select Hour" displayFormat="HH:mm" min="09:00" max="21:00" [(ngModel)]="myDate">
+    </ion-datetime>
 
     <ion-button expand="full" (click)="checkout(cart)">
       Checkout
