@@ -17,11 +17,16 @@ export class AuthService {
   }
 
   login(form) {
+    console.log(form)
     return this.http.post(`${this.url}login`, form);
   }
 
   logout() {
     let form = "";
     return this.http.post(`${this.url}logout`, form);
+  }
+
+  updatePassword(password) {
+    return this.http.post(`${this.url}updatepass`, password);
   }
 }
