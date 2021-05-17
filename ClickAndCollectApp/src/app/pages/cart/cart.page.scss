@@ -6,4 +6,17 @@
         --ion-color-primary: red; // This Variable used for the change of colour ion-datepicker only.
         --ion-color-primary-tint: rgb(214, 153, 153); // This Variable changes the tint colour of background when click button.
     }
-  }
+}
+
+.remove-item {
+    margin-left: auto;
+}
+
+.cart {
+    margin: 0;
+    padding: 5px;
+}
+
+.product-name, .total {
+    width: 180px;
+}
