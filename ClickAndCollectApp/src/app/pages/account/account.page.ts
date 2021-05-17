@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AccountPage implements OnInit {
 
+  loggedInUser = JSON.parse(sessionStorage.getItem("user"));
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -22,5 +24,9 @@ export class AccountPage implements OnInit {
     // this.authService.logout().subscribe((res) => {
     // });
 
+  }
+
+  updatePassword(pass) {
+    this.authService.updatePassword(pass)
   }
 }
