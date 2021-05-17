@@ -5,7 +5,23 @@
 </ion-header>
 
 <ion-content>
+  <h1>{{ loggedInUser.name }}</h1>
+  <p>{{ loggedInUser.email }}</p>
+
+  <form #form="ngForm" (ngSubmit)="updatePassword(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <ion-item>
+            <ion-input name="password" type="password" placeholder="New Password" ngModel required></ion-input>
+            <ion-input name="id" type="hidden" value="{{loggedInUser.id}}" ngModel required></ion-input>
+          </ion-item>
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Update</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
   <button (click)="logout()">Click to disconnect</button>
-  <ion-datetime placeholder="Select Date" displayFormat="DD-MMM-YY"></ion-datetime>
-  <ion-datetime placeholder="Select Hour" displayFormat="hh-mm-A"></ion-datetime>
 </ion-content>
