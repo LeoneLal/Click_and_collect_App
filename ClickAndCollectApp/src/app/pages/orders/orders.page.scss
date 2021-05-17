@@ -1,0 +1,32 @@
+
+.order {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #a78a7f;
+  .infos {
+    width: 75%;
+    padding-left: 5px;
+    .productTitle {
+      font-size: 13px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .productCategory {
+      font-size: 10px;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+    }
+    .productInfo{
+      color: #8c1c13;
+      font-size: 12px;
+    }
+    .productPrice {
+      color: #8c1c13;
+      font-size: 10px;
+    }
+  }
+}
