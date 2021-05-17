@@ -18,7 +18,6 @@ export class LoginPage implements OnInit {
   login(form) {
     console.log(form)
     this.authService.login(form.value).subscribe((res) => {
-      console.log(JSON.stringify(res["user"]));
       this.router.navigateByUrl('/');
       sessionStorage.setItem("authToken", res["access_token"]);
       sessionStorage.setItem("user", JSON.stringify(res["user"]));
