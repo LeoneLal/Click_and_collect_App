@@ -5,8 +5,10 @@
 </ion-header>
 
 <ion-content>
-  <h1>{{ loggedInUser.name }}</h1>
-  <p>{{ loggedInUser.email }}</p>
+  <div class="p">
+    <h1>{{ loggedInUser.name }}</h1>
+    <p>{{ loggedInUser.email }}</p>
+  </div>
 
   <button (click)="logout()">Click to disconnect</button>
 </ion-content>
