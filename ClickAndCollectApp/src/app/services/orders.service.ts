@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class OrdersService {
 
-  url = 'http://127.0.0.1:8000/api/';
+  url = 'http://chezgaelle.herokuapp.com/api/';
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +19,8 @@ export class OrdersService {
   }
 
   postOrder(form) {
-    console.log(form)
-    return this.http.post(`${this.url}orders/store/`, form);
+    const order = this.http.post(`${this.url}orders/store/`, form);
+    return order;
   }
 
 }

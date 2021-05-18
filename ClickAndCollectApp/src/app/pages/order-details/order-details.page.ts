@@ -19,8 +19,7 @@ export class OrderDetailsPage implements OnInit {
     let id = this.activatedRoute.snapshot.paramMap.get('id')
 
     this.ordersService.getOrderDetails(id).subscribe(res => {
-      this.orderDetails = res
-      console.log(this.orderDetails);
+      this.orderDetails = res;
 
       this.orderDetails.forEach(line => {
         this.productService.getProductDetails(line.product_id).subscribe(result => {
@@ -29,8 +28,6 @@ export class OrderDetailsPage implements OnInit {
         });
       });
     });
-
-    console.log(this.orderDetails)
   }
 
 }

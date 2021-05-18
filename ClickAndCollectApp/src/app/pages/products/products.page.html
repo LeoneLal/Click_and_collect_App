@@ -7,7 +7,7 @@
 <ion-content>
   <div class="product"  *ngFor="let product of productTab">
     <div class="img_box"  [routerLink]="['/tabs/', 'products', product.id]">
-      <img src="http://127.0.0.1:8000/images/products/{{ product.picture_slug }}">
+      <img src="http://chezgaelle.herokuapp.com/images/products/{{ product.picture_slug }}">
     </div>
     <div class="infos" [routerLink]="['/tabs/', 'products', product.id]" >
       <h1 class="productTitle">{{ product.name }}</h1>

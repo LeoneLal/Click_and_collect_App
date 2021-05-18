@@ -21,8 +21,6 @@ export class AccountPage implements OnInit {
     sessionStorage.clear();
 
     this.router.navigateByUrl('/login');
-    // this.authService.logout().subscribe((res) => {
-    // });
 
   }
 

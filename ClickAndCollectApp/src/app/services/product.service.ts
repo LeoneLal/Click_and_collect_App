@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  
-  url = 'http://127.0.0.1:8000/api/';
+
+  url = 'http://chezgaelle.herokuapp.com/api/';
 
   constructor(private http: HttpClient) { }
 

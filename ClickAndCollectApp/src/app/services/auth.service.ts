@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
 
-  url = 'http://127.0.0.1:8000/api/auth/';
+  url = 'http://chezgaelleapp.herokuapp.com/api/auth/';
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +17,6 @@ export class AuthService {
   }
 
   login(form) {
-    console.log(form)
     return this.http.post(`${this.url}login`, form);
   }
 
