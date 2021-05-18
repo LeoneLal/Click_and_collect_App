@@ -51,17 +51,17 @@ export class CartPage implements OnInit {
 
   async checkout(products) {
 
-    // let lines = []
+    let lines = []
 
-    // for (let product of products) {
+    for (let product of products) {
 
-    //   let objet = {
-    //     "product_id": product.id,
-    //     "quantity": product.productQuantity,
-    //     "price": product.price
-    //   }
-    //   lines.push(objet);
-    // }
+      let objet = {
+        "product_id": product.id,
+        "quantity": product.productQuantity,
+        "price": product.price
+      }
+      lines.push(objet);
+    }
 
     const hours = new Date(this.myDate);
     const days = new Date(this.selectedDate.split("-").reverse().join("-"));
@@ -76,7 +76,7 @@ export class CartPage implements OnInit {
       "total_price": this.getTotal(),
       "pickup_date": final,
       "order_status": "En cours de validation",
-      // "lines": lines
+      "lines": lines
     };
 
     console.log(post);

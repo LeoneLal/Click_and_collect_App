@@ -8,6 +8,7 @@
   <div *ngIf="orderDetails">
     <ion-card class="product" *ngFor="let line of orderDetails">
       <div class="img_box">
+        <!-- <img src="http://chezgaelle.herokuapp.com/images/products/{{ line.picture_slug }}"> -->
         <img src="http://127.0.0.1:8000/images/products/{{ line.picture_slug }}">
       </div>
       <div class="infos">
