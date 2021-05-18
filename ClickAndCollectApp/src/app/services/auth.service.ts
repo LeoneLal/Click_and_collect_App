@@ -8,6 +8,7 @@ export class AuthService {
 
 
   url = 'http://chezgaelleapp.herokuapp.com/api/auth/';
+  // url = 'http://127.0.0.1:8000/api/auth/';
 
   constructor(private http: HttpClient) { }
 
